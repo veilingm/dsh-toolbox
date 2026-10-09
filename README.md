@@ -51,7 +51,19 @@ dsh-toolbox/
 
 ## 安装
 
-从 GitHub 克隆后先安装依赖，再添加为 profile 组合包：
+### 方式一：从 GitHub URL 安装（网络可达时）
+
+```
+dsh plugin --profile desktop add https://github.com/veilingm/dsh-toolbox
+```
+
+> **国内网络注意**：pnpm 解析 git 地址时先用自身 HTTP 请求探测 GitHub（不走 git 的
+> `http.proxy` 配置），失败后回退 `git+ssh://`（22 端口），直连不通且 22 端口被拦时会报
+> `ssh: connect to host github.com port 22: Connection refused`。解决办法：用方式二，
+> 或在 profile 的 `pnpm-workspace.yaml` 加 `proxy: http://127.0.0.1:<本地代理端口>`，
+> 或让 SSH 走 443（`~/.ssh/config` 配 `ssh.github.com:443`）。
+
+### 方式二：本地克隆安装（推荐）
 
 ```
 git clone https://github.com/veilingm/dsh-toolbox.git
@@ -62,7 +74,7 @@ dsh plugin --profile desktop add <克隆路径>
 
 pnpm 以 `link:` 方式安装本地目录，不会替它安装依赖，而 model-request-counter 功能的
 投影校验依赖 zod，所以添加前需在本目录执行一次 `pnpm install`（node_modules 已被
-.gitignore 排除，不随仓库分发）。
+.gitignore 排除，不随仓库分发）。安装后不要移动/删除克隆目录——profile 里是软链接指向它。
 
 ## 开发
 

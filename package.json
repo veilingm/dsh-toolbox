@@ -1,7 +1,7 @@
 {
   "name": "dsh-toolbox",
   "description": "Toolbox bundle for DeepSeek Harness: merges three standalone plugins (auto-reasoning, model-request-counter, default-multimodal-model) into one installable package whose feature rows are individually enable/disable-able in the plugin manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -34,7 +34,6 @@
     "zod": "^4.4.3"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "^4.0.2",
-    "@deepseek-ai/dsh-session-projection": ">=0.1.5-rc.2 <0.3.0-0"
+    "@deepseek-ai/cordis": "^4.0.2"
   }
 }
