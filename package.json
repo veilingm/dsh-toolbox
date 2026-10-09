@@ -1,7 +1,7 @@
 {
   "name": "dsh-toolbox",
   "description": "Toolbox bundle for DeepSeek Harness: merges three standalone plugins (auto-reasoning, model-request-counter, default-multimodal-model) into one installable package whose feature rows are individually enable/disable-able in the plugin manager",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -14,7 +14,9 @@
   "files": [
     "cordis.patch.yml",
     "features/auto-reasoning/index.js",
+    "features/auto-reasoning/package.json",
     "features/model-request-counter/index.js",
+    "features/model-request-counter/package.json",
     "features/model-request-counter/usage-scan.js",
     "features/model-request-counter/pricing.js",
     "features/model-request-counter/dashboard.html",
@@ -23,6 +25,7 @@
     "features/model-request-counter/static/shared.js",
     "features/model-request-counter/client/index.js",
     "features/default-multimodal-model/index.js",
+    "features/default-multimodal-model/package.json",
     "features/default-multimodal-model/client/index.js"
   ],
   "dsh": {
