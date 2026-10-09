@@ -1,0 +1,40 @@
+{
+  "name": "dsh-toolbox",
+  "description": "Toolbox bundle for DeepSeek Harness: merges three standalone plugins (auto-reasoning, model-request-counter, default-multimodal-model) into one installable package whose feature rows are individually enable/disable-able in the plugin manager",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./auto-reasoning": "./features/auto-reasoning/index.js",
+    "./model-request-counter": "./features/model-request-counter/index.js",
+    "./default-multimodal-model": "./features/default-multimodal-model/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "cordis.patch.yml",
+    "features/auto-reasoning/index.js",
+    "features/model-request-counter/index.js",
+    "features/model-request-counter/usage-scan.js",
+    "features/model-request-counter/pricing.js",
+    "features/model-request-counter/dashboard.html",
+    "features/model-request-counter/types/index.js",
+    "features/model-request-counter/types/client.js",
+    "features/model-request-counter/static/shared.js",
+    "features/model-request-counter/client/index.js",
+    "features/default-multimodal-model/index.js",
+    "features/default-multimodal-model/client/index.js"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "zod": "^4.4.3"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-session-projection": ">=0.1.5-rc.2 <0.3.0-0"
+  }
+}

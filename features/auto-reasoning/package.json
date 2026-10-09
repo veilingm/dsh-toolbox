@@ -1,0 +1,8 @@
+{
+  "name": "dsh-auto-reasoning",
+  "description": "Toolbox feature: auto reasoning-effort declaration for every explicitly configured llm-pi-ai model (off/low/high/max), so thinking depth is selectable everywhere",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.js"
+}

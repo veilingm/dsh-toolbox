@@ -1,0 +1,18 @@
+{
+  "name": "dsh-default-multimodal-model",
+  "description": "Toolbox feature: 默认多模态模型 settings section to pick the provider/model used for image and other multimodal tasks, persisted under $DSH_HOME/default-multimodal-model.json",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client/index.js"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  }
+}

@@ -1,0 +1,20 @@
+# dsh-toolbox bundle patch: inserts the three toolbox feature rows. Each row
+# is addressed by its own id, so every feature can be enabled or disabled
+# individually (plugin manager page or the plugin_manager tool), while the
+# package itself is installed and selected as one bundle.
+#
+# Row names are filesystem paths relative to THIS patch file's directory (the
+# installed package root): app-boot anchors relative insert names beside the
+# patch and turns them into file URLs. Each feature resolves to its own nested
+# package manifest (features/<feature>/package.json); that nested manifest is
+# what the client module system uses to find the feature's browser half
+# (dsh.client), giving every feature an independent client bundle lifecycle.
+# Applied as one insert over the current profile root; rows here are addressed
+# by id, with later layers and the user's profile cordis.patch.yml still to come.
+- insert:
+    - id: auto-reasoning
+      name: './features/auto-reasoning/index.js'
+    - id: model-request-counter
+      name: './features/model-request-counter/index.js'
+    - id: default-multimodal-model
+      name: './features/default-multimodal-model/index.js'
